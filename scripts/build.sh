@@ -1,3 +1,3 @@
 #!/bin/bash
 
-go build -o dist/hello .
+go build -o dist/hello ./hello
