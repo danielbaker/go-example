@@ -1,0 +1,15 @@
+steps:
+  - label: "build binary"
+    command: "./scripts/build.sh"
+    artifact_paths: "dist/hello"
+    plugins:
+      - docker#v3.13.0:
+          image: "golang:1.18.0"
+
+  - input: "Who is running this script?"
+    fields:
+      - text: "Your name"
+        key: "name"
+
+  - label: "run binary"
+    command: "./scripts/run.sh"
