@@ -7,9 +7,11 @@ steps:
           image: "golang:1.18.0"
 
   - input: "Who is running this script?"
+    key: "collect-name"
     fields:
       - text: "Your name"
         key: "name"
 
   - label: "run binary"
     command: "./scripts/run.sh"
+    depends_on: "collect-name"
