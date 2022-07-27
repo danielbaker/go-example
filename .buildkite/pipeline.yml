@@ -6,22 +6,18 @@ steps:
       - docker#v3.13.0:
           image: "golang:1.18.0"
 
-  - input: "Who is running this script?"
-    key: "collect-name"
+  - block: "Who is running this script?"
     fields:
       - text: "Your name"
         key: "name"
 
   - label: "run binary"
-    key: "run-binary"
     command: "./scripts/run.sh"
-    depends_on: "collect-name"
     artifact_paths: "output.txt"
     plugins:
       - 'uber-workflow/run-without-clone':
 
   - label: "validate output"
     command: "./scripts/test.sh"
-    depends_on: "run-binary"
     plugins:
       - 'uber-workflow/run-without-clone':
