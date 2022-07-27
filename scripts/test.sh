@@ -6,7 +6,7 @@ NAME=$(buildkite-agent meta-data get name)
 
 buildkite-agent artifact download output.txt .
 
-EXPECTED_VALUE = "Hello, $NAME!"
+EXPECTED_VALUE="Hello, $NAME!"
 
 if [ "$EXPECTED_VALUE" == "$(cat output.txt)" ] ;then
     exit 0
