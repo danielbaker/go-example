@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -euxo pipefail
+set -euo pipefail
 
 NAME=$(buildkite-agent meta-data get name)
 

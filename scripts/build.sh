@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # fail on errors
-set -euxo pipefail
+set -euo pipefail
 
 go build -o dist/hello ./hello
 
