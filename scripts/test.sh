@@ -1,9 +1,12 @@
 #!/bin/bash
 
+# fail on errors
 set -euo pipefail
 
+# retrieve expected name from buildkite metadata
 NAME=$(buildkite-agent meta-data get name)
 
+# download command output
 buildkite-agent artifact download output.txt .
 
 EXPECTED_VALUE="Hello, $NAME!"
