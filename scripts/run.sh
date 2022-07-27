@@ -1,11 +1,13 @@
 #!/bin/bash
 
-set -euo pipefail
+set -euxo pipefail
 
 NAME=$(buildkite-agent meta-data get name)
 
 buildkite-agent artifact download dist/hello .
 
-chmod +x ./dist/hello
+sudo chmod +x ./dist/hello
 
-./dist/hello $NAME
+./dist/hello $NAME > output.txt
+
+echo output.txt
