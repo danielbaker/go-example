@@ -15,3 +15,5 @@ steps:
   - label: "run binary"
     command: "./scripts/run.sh"
     depends_on: "collect-name"
+    plugins:
+      - 'uber-workflow/run-without-clone':
