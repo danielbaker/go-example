@@ -8,4 +8,4 @@ buildkite-agent artifact download dist/hello .
 
 ./dist/hello $NAME > output.txt
 
-echo output.txt
+echo $(cat output.txt)

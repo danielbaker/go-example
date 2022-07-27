@@ -18,3 +18,9 @@ steps:
     artifact_paths: "output.txt"
     plugins:
       - 'uber-workflow/run-without-clone':
+
+  - label: "validate output"
+    command: "./scripts/test.sh"
+    artifact_paths: "output.txt"
+    plugins:
+      - 'uber-workflow/run-without-clone':
