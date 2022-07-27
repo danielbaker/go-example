@@ -23,6 +23,5 @@ steps:
   - label: "validate output"
     command: "./scripts/test.sh"
     depends_on: "run-binary"
-    artifact_paths: "output.txt"
     plugins:
       - 'uber-workflow/run-without-clone':
