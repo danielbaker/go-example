@@ -12,12 +12,14 @@ steps:
         key: "name"
 
   - label: "run binary"
+    key: "run-binary"
     command: "./scripts/run.sh"
     artifact_paths: "output.txt"
     plugins:
       - 'uber-workflow/run-without-clone':
 
   - label: "validate output"
+    depends_on: "run-bninary"
     command: "./scripts/test.sh"
     plugins:
       - 'uber-workflow/run-without-clone':
