@@ -19,7 +19,7 @@ steps:
       - 'uber-workflow/run-without-clone':
 
   - label: "validate output"
-    depends_on: "run-bninary"
+    depends_on: "run-binary"
     command: "./scripts/test.sh"
     plugins:
       - 'uber-workflow/run-without-clone':
